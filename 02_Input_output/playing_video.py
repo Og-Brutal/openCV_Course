@@ -12,6 +12,9 @@ while(ret):
     ret,frame=video.read()
     if(ret):
         cv2.imshow("frame",frame)
-        cv2.waitKey(20)
+        if(cv2.waitKey(20) & 0xFF==ord("q")):
+            break
+
+    
 video.release()
 cv2.destroyAllWindows()
